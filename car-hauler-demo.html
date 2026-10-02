@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Apex Auto Transport & Car Hauling LLC — Nationwide Vehicle Logistics</title>
+<meta name="description" content="Licensed & insured nationwide car hauling. Open & enclosed auto transport, dealership transfers, auto auction pickups (Copart/Manheim), and expedited vehicle shipping.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏎️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark: #070a12;
+  --bg-card: #0d1424;
+  --bg-card-hover: #141f36;
+  --blue: #38bdf8;
+  --blue-dark: #0284c7;
+  --blue-glow: rgba(56, 189, 248, 0.35);
+  --gold: #f59e0b;
+  --gold-glow: rgba(245, 158, 11, 0.3);
+  --green: #10b981;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.08);
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-size: 15px;
+  overflow-x: hidden;
+  padding-bottom: 90px;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Outbound Sales Closer Pitch Bar */
+.agent-bar {
+  background: linear-gradient(135deg, #06192e, #0a2544);
+  border-bottom: 1.5px solid var(--blue);
+  padding: 14px 20px;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.agent-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.agent-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.agent-badge {
+  background: var(--blue);
+  color: #04101e;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.agent-title {
+  color: #bae6fd;
+  font-size: 14px;
+  font-weight: 700;
+}
+.agent-script-box {
+  background: rgba(0,0,0,0.45);
+  border: 1px dashed rgba(56, 189, 248, 0.4);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  color: #e0f2fe;
+  line-height: 1.5;
+}
+.agent-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn-script-action {
+  background: #14213d;
+  color: #f8fafc;
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .2s;
+}
+.btn-script-action:hover {
+  background: var(--blue);
+  color: #04101e;
+}
+
+/* Nav */
+header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 10, 18, 0.95);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+.brand-logo-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 0 15px var(--blue-glow);
+}
+.brand-logo-text h2 {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+.brand-logo-text span {
+  color: var(--blue);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+.nav-cta-btn {
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: #04101e;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
+  transition: all .2s;
+}
+
+/* Hero */
+.hero {
+  padding: 60px 0 50px;
+  position: relative;
+  background: radial-gradient(circle at 80% 25%, rgba(56, 189, 248, 0.12), transparent 50%),
+              radial-gradient(circle at 20% 75%, rgba(245, 158, 11, 0.08), transparent 45%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #7dd3fc;
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #38bdf8;
+  animation: blink 1.2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4.5vw, 50px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+.hero h1 span.blue { color: var(--blue); }
+.hero-sub {
+  color: var(--text-muted);
+  font-size: 16.5px;
+  margin-bottom: 26px;
+  max-width: 560px;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.btn-primary-ship {
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: #04101e;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 900;
+  padding: 14px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+}
+.btn-packet {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1.5px solid var(--border);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-trust-badges {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.trust-item { display: flex; align-items: center; gap: 6px; }
+.trust-item strong { color: var(--text-main); }
+
+/* Dispatch Quick Card */
+.dispatch-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  position: relative;
+}
+.dispatch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.dispatch-header h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+}
+.fmcsa-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  font-weight: 800;
+  font-size: 11.5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.form-group input, .form-group select {
+  width: 100%;
+  background: #070a12;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+.btn-submit-ship {
+  width: 100%;
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: #04101e;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 15px;
+  padding: 13px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all .2s;
+}
+.btn-submit-ship:hover { transform: translateY(-2px); }
+
+/* Authority Verification Ribbon */
+.authority-ribbon {
+  background: #0b1120;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+.auth-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+}
+.auth-box span {
+  display: block;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700;
+}
+.auth-box b {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--blue);
+}
+
+/* Fleet Services */
+.sec-pad { padding: 60px 0; }
+.sec-title {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+.sec-title h2 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.sec-title p { color: var(--text-muted); font-size: 15px; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  transition: all .25s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.4);
+  background: var(--bg-card-hover);
+}
+.srv-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+.service-card h3 {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.service-card p {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.srv-rate {
+  font-size: 12.5px;
+  color: var(--blue);
+  font-weight: 800;
+}
+
+/* Rate Calculator */
+.calc-box {
+  background: linear-gradient(135deg, #091220, #0e1c33);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 18px;
+  padding: 34px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+.calc-result {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.calc-price {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--blue);
+  margin: 6px 0;
+}
+
+/* Floating Bottom Call Bar */
+.floating-call-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(7, 10, 18, 0.98);
+  border-top: 1.5px solid var(--blue);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+}
+.call-bar-left {
+  display: flex;
+  flex-direction: column;
+}
+.call-bar-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.call-bar-phone {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 900;
+  color: #fff;
+}
+.call-bar-btn {
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: #04101e;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+@media(max-width: 850px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .calc-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Outbound Sales Closer Pitch Bar -->
+<div class="agent-bar">
+  <div class="agent-bar-inner">
+    <div class="agent-top-row">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="agent-badge">Auto Hauler Pitch Script</span>
+        <span class="agent-title">Calling <span id="agentBizName" style="color:#7dd3fc">Car Hauler / Transport Carrier</span></span>
+      </div>
+      <div class="agent-actions">
+        <button class="btn-script-action" onclick="copyHaulerSMS()">💬 Copy SMS Pitch</button>
+        <button class="btn-script-action" onclick="document.getElementById('scriptDetails').style.display = document.getElementById('scriptDetails').style.display==='none'?'block':'none'">📖 Toggle Call Script</button>
+      </div>
+    </div>
+    <div class="agent-script-box" id="scriptDetails">
+      <strong>🎯 Closer Pitch Hook:</strong> "Hey <span id="scriptBiz">Carrier Owner</span>, saw you haul cars out of <span id="scriptCity">your area</span>. Right now high-paying direct shippers, dealerships, and auto auctions like Copart/Manheim want to book directly with carriers who have instant quote forms and downloadable broker packets (COI/W-9) on their own website. Without a professional web presence, you're forced to take lowball broker load board rates and lose 30% margin. I built this live custom portal for your company: <span id="scriptUrlShort">demo link</span>. Just one single 3-car haul pays for the whole setup ($750). Can I text you the link?"
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="nav-wrap">
+      <a href="#" class="brand-logo">
+        <div class="brand-logo-icon">🏎️</div>
+        <div class="brand-logo-text">
+          <h2 id="navBizName">Apex Auto Transport LLC</h2>
+          <span>Interstate &amp; Regional Car Hauling</span>
+        </div>
+      </a>
+      <a href="tel:5551234567" id="navCallBtn" class="nav-cta-btn">
+        📞 DIRECT DISPATCH LINE
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="status-pill">
+          <span class="pulse-dot"></span>
+          <span>ACTIVE EXPEDITED LANES OPERATING FROM <span id="heroCityTag">YOUR REGION</span></span>
+        </div>
+        <h1>RELIABLE NATIONWIDE <span class="blue">CAR HAULING &amp; AUTO</span> TRANSPORT</h1>
+        <p class="hero-sub">Licensed commercial motor carrier specializing in open multi-car wedges, enclosed exotic transport, dealership inventory transfers, and auto auction deliveries.</p>
+        
+        <div class="hero-btns">
+          <a href="#quote" class="btn-primary-ship">
+            🚚 GET INSTANT VEHICLE RATE
+          </a>
+          <a href="tel:5551234567" id="heroCallBtn" class="btn-packet">
+            📞 Call Dispatcher
+          </a>
+        </div>
+
+        <div class="hero-trust-badges">
+          <div class="trust-item">🛡️ <strong>$250K</strong> Cargo Coverage</div>
+          <div class="trust-item">🏛️ <strong>Active FMCSA</strong> MC &amp; DOT</div>
+          <div class="trust-item">⏱️ <strong>Guaranteed</strong> Pickup Windows</div>
+          <div class="trust-item">🔒 <strong>Zero Damage</strong> Soft-Tied</div>
+        </div>
+      </div>
+
+      <!-- Quick Rate Card -->
+      <div class="dispatch-card" id="quote">
+        <div class="dispatch-header">
+          <h3>⚡ Request Transport Quote</h3>
+          <span class="fmcsa-badge">FMCSA VERIFIED CARRIER</span>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Transport Quote Request Submitted! A dispatch coordinator will text and email your guaranteed rate within 15 minutes.');">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="form-group">
+              <label>Pickup City, State</label>
+              <input type="text" id="inputPickup" placeholder="e.g. Dallas, TX" required>
+            </div>
+            <div class="form-group">
+              <label>Delivery City, State</label>
+              <input type="text" placeholder="e.g. Atlanta, GA" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Vehicle Year, Make &amp; Model</label>
+            <input type="text" placeholder="e.g. 2023 Chevrolet Corvette / Ford F-250" required>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="form-group">
+              <label>Carrier Type</label>
+              <select>
+                <option>Open Multi-Car Carrier</option>
+                <option>Enclosed Exotic Transport</option>
+                <option>Inoperable / Winch Loading</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Shipper Type</label>
+              <select>
+                <option>Dealership / Dealer Trade</option>
+                <option>Auto Auction (Copart / Manheim)</option>
+                <option>Private Owner / Relocation</option>
+                <option>Freight Broker</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone / Email for Rate Confirmation</label>
+            <input type="text" placeholder="(555) 000-0000 or email" required>
+          </div>
+          <button type="submit" class="btn-submit-ship">🚀 LOCK IN GUARANTEED RATE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FMCSA Authority Strip -->
+<div class="authority-ribbon">
+  <div class="container">
+    <div class="auth-grid">
+      <div class="auth-box">
+        <span>USDOT OPERATING REGISTRATION</span>
+        <b id="dispDot">USDOT #3892011</b>
+      </div>
+      <div class="auth-box">
+        <span>INTERSTATE MOTOR CARRIER</span>
+        <b id="dispMc">MC-1428590</b>
+      </div>
+      <div class="auth-box">
+        <span>PRIMARY CARGO INSURANCE</span>
+        <b>$250,000 PER LOAD</b>
+      </div>
+      <div class="auth-box">
+        <span>PUBLIC LIABILITY COVERAGE</span>
+        <b>$1,000,000 ACTIVE</b>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services Grid -->
+<section class="sec-pad">
+  <div class="container">
+    <div class="sec-title">
+      <h2>EXPEDITED AUTO HAULING FLEET</h2>
+      <p>Modern equipment, air-ride suspensions, and over-the-wheel soft straps engineered for zero-stress vehicle logistics.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="srv-icon">🚛</span>
+        <h3>Open Multi-Car Carrier</h3>
+        <p>Cost-effective standard transport on 3-car wedges and 7–9 car stackers. The preferred choice for regional dealer inventory moves and private relocations.</p>
+        <div class="srv-rate">Best Rates per Mile · Flexible Windows</div>
+      </div>
+      <div class="service-card">
+        <span class="srv-icon">🏎️</span>
+        <h3>Enclosed Exotic &amp; Classic</h3>
+        <p>100% dust-tight, weather-sealed hard-sided trailers with hydraulic lift gates for zero-angle loading of low-clearance exotics and vintage collector cars.</p>
+        <div class="srv-rate">White-Glove VIP Service · High Valuation</div>
+      </div>
+      <div class="service-card">
+        <span class="srv-icon">🏛️</span>
+        <h3>Auction Pickup (Copart/IAAI/Manheim)</h3>
+        <p>Specialized gate pass handling, buyer number clearance, and onboard winching for salvage or non-running auction vehicles across major yards.</p>
+        <div class="srv-rate">Storage Fee Prevention · Rapid Gate Pull</div>
+      </div>
+      <div class="service-card">
+        <span class="srv-icon">🏢</span>
+        <h3>Dealership &amp; Fleet Transfers</h3>
+        <p>Scheduled multi-unit trades between dealer lots, rental fleet repositioning, and seasonal OEM batch deliveries with dedicated dispatch.</p>
+        <div class="srv-rate">Volume Net-30 Terms Available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Route Calculator -->
+<section class="sec-pad" style="background:#0a0f1d;">
+  <div class="container">
+    <div class="calc-box">
+      <div class="sec-title" style="margin-bottom: 24px;">
+        <h2>⚡ INSTANT ROUTE FREIGHT ESTIMATOR</h2>
+        <p>Calculate your estimated per-vehicle transport cost based on distance and trailer type.</p>
+      </div>
+      <div class="calc-grid">
+        <div>
+          <div class="form-group">
+            <label>Trailer Service Type</label>
+            <select id="calcTrailer" onchange="calcHaulPrice()">
+              <option value="1.0">Open Multi-Car Carrier (Standard Rate)</option>
+              <option value="1.55">Enclosed Hard-Side White Glove (+55%)</option>
+              <option value="1.2">Non-Running / Inoperable Winch Load (+20%)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Estimated Transit Distance (Miles)</label>
+            <input type="range" id="calcDist" min="100" max="2500" step="50" value="650" oninput="calcHaulPrice()" style="accent-color:var(--blue);">
+            <div style="display:flex;justify-content:space-between;color:var(--text-muted);font-size:12px;margin-top:4px;">
+              <span>100 Mi (Regional)</span>
+              <strong id="calcDistVal" style="color:var(--blue);font-size:14px;">650 Miles</strong>
+              <span>2,500 Mi (Coast-to-Coast)</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Vehicle Class</label>
+            <select id="calcClass" onchange="calcHaulPrice()">
+              <option value="0">Standard Sedan / Coupe</option>
+              <option value="90">Midsize SUV / Crossover (+$90)</option>
+              <option value="180">Full-Size Truck / Van / Dually (+$180)</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result">
+          <span style="font-size:12px;text-transform:uppercase;color:var(--text-muted);font-weight:700;">Estimated Direct Freight</span>
+          <div class="calc-price" id="totalHaulPrice">$845</div>
+          <span style="font-size:12.5px;color:#34d399;font-weight:700;margin-bottom:12px;">✓ Includes Full Cargo Insurance &amp; Fuel</span>
+          <a href="tel:5551234567" id="calcCallBtn" class="btn-primary-ship" style="padding:10px 18px;font-size:14px;">
+            📞 BOOK TRUCK &amp; CONFIRM
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Bottom Call Bar -->
+<div class="floating-call-bar">
+  <div class="call-bar-left">
+    <span class="call-bar-title">Direct Carrier Dispatch:</span>
+    <span class="call-bar-phone" id="barPhone">(555) 123-4567</span>
+  </div>
+  <a href="tel:5551234567" id="floatingCallBtn" class="call-bar-btn">
+    🚚 CALL DISPATCH FOR LOAD
+  </a>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const rawBiz   = params.get('biz')   || 'Apex Auto Transport & Car Haulers LLC';
+const rawCity  = params.get('city')  || 'Houston, TX';
+const rawPhone = params.get('phone') || '7135550188';
+const rawDot   = params.get('dot')   || '4102948';
+const rawMc    = params.get('mc')    || '1520394';
+
+function fmtPhone(p) {
+  const d = String(p).replace(/\D/g, '');
+  if (d.length === 10) return "(" + d.slice(0,3) + ") " + d.slice(3,6) + "-" + d.slice(6);
+  return p;
+}
+const formattedPhone = fmtPhone(rawPhone);
+const telUrl = 'tel:' + rawPhone.replace(/\D/g, '');
+
+document.title = rawBiz + ' — Nationwide Car Hauling & Auto Transport in ' + rawCity;
+document.getElementById('navBizName').textContent = rawBiz;
+document.getElementById('agentBizName').textContent = rawBiz;
+document.getElementById('scriptBiz').textContent = rawBiz;
+document.getElementById('scriptCity').textContent = rawCity;
+document.getElementById('heroCityTag').textContent = rawCity.toUpperCase();
+document.getElementById('inputPickup').value = rawCity;
+document.getElementById('barPhone').textContent = formattedPhone;
+
+document.getElementById('dispDot').textContent = 'USDOT #' + rawDot;
+document.getElementById('dispMc').textContent = (rawMc.startsWith('MC') ? '' : 'MC-') + rawMc;
+
+document.getElementById('navCallBtn').href = telUrl;
+document.getElementById('heroCallBtn').href = telUrl;
+document.getElementById('calcCallBtn').href = telUrl;
+document.getElementById('floatingCallBtn').href = telUrl;
+
+function calcHaulPrice() {
+  const dist = parseInt(document.getElementById('calcDist').value);
+  const trailerMult = parseFloat(document.getElementById('calcTrailer').value);
+  const classAdd = parseFloat(document.getElementById('calcClass').value);
+  document.getElementById('calcDistVal').textContent = dist + ' Miles';
+
+  // Base rate curve: ~$1.30/mi for short, ~$0.85/mi for long haul
+  let ratePerMi = 1.25;
+  if (dist > 500) ratePerMi = 1.05;
+  if (dist > 1000) ratePerMi = 0.90;
+  if (dist > 1800) ratePerMi = 0.80;
+
+  const total = Math.round((dist * ratePerMi * trailerMult) + classAdd + 150);
+  document.getElementById('totalHaulPrice').textContent = '$' + total;
+}
+calcHaulPrice();
+
+function copyHaulerSMS() {
+  const currentUrl = window.location.href;
+  const msg = "Hey, noticed " + rawBiz + " hauls vehicles out of " + rawCity + ". When dealers and direct shippers look for car haulers with active MC/DOT operating authority, having an instant rate form and carrier packet online gets you direct loads without paying 30% broker fees.\n\nI built a custom auto transport portal for " + rawBiz + ":\n👉 " + currentUrl + "\n\nOne single 3-car load pays for the entire setup ($750). Check it out on your phone and let me know if you want us to set it live!";
+  navigator.clipboard.writeText(msg).then(() => {
+    alert("✅ Car Hauler SMS pitch copied to clipboard!");
+  });
+}
+</script>
+</body>
+</html>
